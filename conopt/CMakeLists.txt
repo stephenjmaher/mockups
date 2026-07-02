@@ -14,10 +14,8 @@ set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 add_library(conopt SHARED src/conopt.cpp include/conopt.h)
 
-set_target_properties(conopt PROPERTIES OUTPUT_NAME conopt4)
-
 if(WIN32)
-  set_target_properties(conopt PROPERTIES PREFIX "" IMPORT_PREFIX "")
+  set_target_properties(conopt PROPERTIES OUTPUT_NAME conopt4 PREFIX "" IMPORT_PREFIX "")
 endif()
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 4)
